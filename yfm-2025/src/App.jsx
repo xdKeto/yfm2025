@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Mancing from "./components/Mancing";
+import Makrab from "./components/Makrab";
+import Contacts from "./components/Contacts"
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
     <Hero/>
     <About/>
     <Mancing/>
+    <Makrab/>
+    <Contacts/>
       </main>
     </>
   );

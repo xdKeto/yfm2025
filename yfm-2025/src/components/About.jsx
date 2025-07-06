@@ -11,15 +11,15 @@ const About = () => {
       </div>
 
       <div className="flex flex-col-reverse max-w-7xl md:flex-row items-center justify-center will-change-transform px-4 md:px-8 md:mt-8">
-        <div className="w-full md:w-5/6 px-6 py-4 md:py-6 will-change-transform bg-white/80  rounded-lg  text-shadow-md text-shadow text-shadow-white">
-          <h2 className="text-2xl md:text-3xl font-semibold pb-2">
+        <div className="w-full md:w-5/6 px-6 py-4 md:py-6 will-change-transform bg-white/80  rounded-lg  text-shadow-sm text-shadow text-shadow-white">
+          <h2 className="text-3xl md:text-4xl font-semibold pb-2">
             Apa itu <span className="font-black text-purple-950 text-shadow-fuchsia-300 text-shadow-2xs">Youth Festival Month?</span>
           </h2>
-          <p className="md:text-lg pb-6">{ABOUT_SECTION.about}</p>
-          <h2 className="text-2xl md:text-3xl font-semibold pb-2">
+          <p className="md:text-xl text-lg pb-6">{ABOUT_SECTION.about}</p>
+          <h2 className="text-3xl md:text-4xl  font-semibold pb-2">
             YFM 2025 bertema <span className="font-black text-red-700 text-shadow-red-950 text-shadow-2xs"> Community of Love </span>
           </h2>
-          <p className="md:text-lg">{ABOUT_SECTION.tema}</p>
+          <p className="md:text-xl text-lg">{ABOUT_SECTION.tema}</p>
           
         </div>
         <div className="w-full md:w-3/6 px-6 md:px-8 py-2 md:py-8 will-change-transform flex justify-center">
