@@ -37,7 +37,7 @@ const Mancing = () => {
 
         <a href={MANCING_SECTION.link} className="will-change-transform relative mt-6">
           <span class="absolute top-0 left-0 mt-1 ml-1 h-full w-full rounded bg-black"></span>
-          <span class="fold-bold relative inline-block h-full w-full rounded border-2 border-black bg-white px-4 py-2 text-2xl font-bold text-black transition duration-100 hover:bg-yellow-200 hover:text-gray-900">Daftar Sekarang!</span>
+          <span class="fold-bold relative inline-block h-full w-full rounded border-2 border-black bg-white px-4 py-2 text-2xl font-bold text-black transition duration-100 hover:bg-yellow-200 hover:text-gray-900">Tekan untuk Daftar!</span>
         </a>
 
         <div className="will-change-transform flex flex-col md:flex-row mt-6 md:mt-8 gap-4 ">
