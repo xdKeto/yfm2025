@@ -15,13 +15,13 @@ export const ABOUT_SECTION = {
 export const MANCING_SECTION = {
   lokasi: "Monstero Fishing Park",
   usia: "18-25 tahun",
-  link: ""
+  link: "https://docs.google.com/forms/d/e/1FAIpQLSd1tXa5O8z6gwm8kju0e2AG_MOTqCyE32c7RgP2a04eX-byCA/viewform"
 }
 
 export const MAKRAB_SECTION = {
   lokasi: "GSG B lt. 2 GKI PTI",
   usia: "16-25 tahun",
-  link: ""
+  link: "https://docs.google.com/forms/d/e/1FAIpQLSdE6TEp2FaJKTTbUDGRc5laPo0V_QmeD6-qn2tBZXsNpLkatw/viewform"
 }
 
 export const CONTACT_SECTION = {
@@ -32,7 +32,7 @@ export const CONTACT_SECTION = {
       platform: "Whatsapp",
       icon: RiWhatsappLine,
       ariaLabel: "Contact us!",
-      url: ""
+      url: "https://wa.link/v28qsd"
     },
     {
       platform: "Instagram",
