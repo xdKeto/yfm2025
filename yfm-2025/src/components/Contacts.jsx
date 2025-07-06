@@ -1,7 +1,35 @@
 import { CONTACT_SECTION } from "../constants";
 import societyLogo from "../assets/society_logo.png";
 import ptiLogo from "../assets/pti_logo.png";
-import join from "../assets/join.png"
+import join from "../assets/join.png";
+
+import { motion } from "framer-motion";
+
+const textVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+      delay,
+    },
+  }),
+};
+
+const iconVariants = {
+  hidden: { opacity: 0, scale: 0 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+      delay,
+    },
+  }),
+};
 
 const Contacts = () => {
   return (
@@ -12,18 +40,30 @@ const Contacts = () => {
         </svg>
       </div>
 
-      <div className="flex flex-col px-2 md:px-8 mt-12 md:mt-32 items-center">
-        <img src={join} alt="" className="w-[500px] md:w-[400px]"/>
+      <motion.div initial="hidden" whileInView="visible" custom={0.4} variants={textVariants} viewport={{ once: true, amount: 0.3 }} className="flex flex-col px-2 md:px-8 mt-12 md:mt-32 items-center">
+        <img src={join} alt="" className="w-[500px] md:w-[400px]" />
         <p className="text-white font-semibold text-sm md:text-2xl mt-6 max-w-3xl will-change-transform"> {CONTACT_SECTION.sub} </p>
-      </div>
+      </motion.div>
 
       <div className="flex space-x-6 mt-8 px-2 md:px-8 justify-center">
         {CONTACT_SECTION.socialLinks.map((link, index) => {
           const Icon = link.icon;
           return (
-            <a key={link.platform} href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.ariaLabel} className="will-change-transform text-white hover:text-gray-300 transition-colors duration-300">
+            <motion.a
+              key={link.platform}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial="hidden"
+              whileInView="visible"
+              custom={1.0 + index * 0.2}
+              variants={iconVariants}
+              aria-label={link.ariaLabel}
+              className="will-change-transform text-white hover:text-gray-300 transition-colors duration-300"
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <Icon size={36} />
-            </a>
+            </motion.a>
           );
         })}
       </div>

@@ -4,6 +4,13 @@ import { MANCING_SECTION } from "../constants";
 import { RiInformation2Fill, RiMapPin2Fill } from "@remixicon/react";
 import fishing from "../assets/fishing.png";
 
+import { motion } from "framer-motion";
+
+const textVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
 const Mancing = () => {
   return (
     <section id="mancing" className="min-h-screen relative flex items-center justify-center overflow-hidden pb-4 md:p-8">
@@ -23,7 +30,7 @@ const Mancing = () => {
         alt=""
       />
 
-      <div className="will-change-transform flex flex-col items-center justify-center space-y-4 relative z-10">
+      <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={textVariants} className="will-change-transform flex flex-col items-center justify-center space-y-4 relative z-10">
         <div className="will-change-transform text-shadow-lg text-shadow-blue-500">
           <img src={headline} width={650} height={650} alt="" />
         </div>
@@ -51,7 +58,7 @@ const Mancing = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

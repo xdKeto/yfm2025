@@ -13,6 +13,21 @@ import redStar2 from "../assets/red_star2.png";
 import yellowStar1 from "../assets/yellow_star1.png";
 import yellowStar2 from "../assets/yellow_star2.png";
 
+import { motion } from "framer-motion"
+
+const textVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const imageVariants = {
+  hidden: { clipPath: "inset(0 50% 0 50%" },
+  visible: {
+    clipPath: "inset(0 0% 0 0%)",
+    transition: { duration: 1.2, ease: "easeInOut" },
+  },
+};
+
 const stars = [
   { top: "25%", left: "10%", zIndex: 5, size: 40, rotate: 0, image: blueStar },
   { top: "55%", left: "80%", zIndex: 5, size: 70, rotate: 0, image: blueStar2 },
@@ -33,9 +48,13 @@ const Hero = () => {
     <section id="hero_section" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Stars */}
       {stars.map((star, idx) => (
-        <img
+        <motion.img
           key={idx}
           src={star.image}
+          className="will-change-transform"
+          initial="hidden"
+          animate="visible"
+          variants={textVariants}
           alt=""
           style={{
             position: "absolute",
@@ -52,10 +71,10 @@ const Hero = () => {
       ))}
 
       {/* Logo and tagline group */}
-      <div className="flex flex-col items-center justify-center space-y-4 md:mt-16 relative z-10">
+      <motion.div initial="hidden" animate="visible" variants={imageVariants} className="will-change-transform flex flex-col items-center justify-center space-y-4 md:mt-16 relative z-10">
         <img src={yfmLogo} width={580} height={650} alt="" />
         <img src={tagline} width={300} height={650} alt="" />
-      </div>
+      </motion.div>
       <div class="custom-shape-divider-bottom-1751734920">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
           <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
